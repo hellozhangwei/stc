@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-facade-xml type="seed">
+
+    <mantle.party.Party partyId="ORG_STC" pseudoId="ORG_STC" partyTypeEnumId="PtyOrganization">
+        <organization organizationName="北京盛安德贸易有限公司"/>
+        <roles roleTypeId="OrgInternal"/>
+        <mantle.party.contact.ContactMech contactMechId="ORG_STC_PA" contactMechTypeEnumId="CmtPostalAddress">
+            <mantle.party.contact.PostalAddress toName="北京盛安德贸易有限公司"
+                                                address1="麦子店街37号胜福大厦" address2="朝阳区" unitNumber="010"
+                                                city="北京" stateProvinceGeoId="CHN_11" countryGeoId="CHN" postalCode="100088" postalCodeExt=""/>
+            <mantle.party.contact.PartyContactMech contactMechPurposeId="PostalPayment" fromDate="1265184000000"/>
+            <mantle.party.contact.PartyContactMech contactMechPurposeId="PostalBilling" fromDate="1265184000000"/>
+        </mantle.party.contact.ContactMech>
+
+        <mantle.party.contact.ContactMech contactMechId="ORG_STC_SA" contactMechTypeEnumId="CmtPostalAddress">
+            <mantle.party.contact.PostalAddress toName="北京盛安德贸易有限公司廊坊分公司"
+                                                address1="开发区进出口保税区11-2" address2="广阳区" unitNumber=""
+                                                city="廊坊市" stateProvinceGeoId="CHN_13" countryGeoId="CHN" postalCode="065000" postalCodeExt=""/>
+            <mantle.party.contact.PartyContactMech contactMechPurposeId="PostalShippingDest" fromDate="1265184000000"/>
+            <mantle.party.contact.PartyContactMech contactMechPurposeId="PostalShippingOrigin" fromDate="1265184000000"/>
+        </mantle.party.contact.ContactMech>
+
+        <mantle.party.contact.ContactMech contactMechId="ORG_STC_RTL_PT" contactMechTypeEnumId="CmtTelecomNumber">
+            <mantle.party.contact.TelecomNumber countryCode="86" areaCode="010" contactNumber="62378888"/>
+            <mantle.party.contact.PartyContactMech contactMechPurposeId="PhonePayment" fromDate="1265184000000"/>
+            <mantle.party.contact.PartyContactMech contactMechPurposeId="PhoneBilling" fromDate="1265184000000"/>
+            <mantle.party.contact.PartyContactMech contactMechPurposeId="PhoneShippingOrigin" fromDate="1265184000000"/>
+            <mantle.party.contact.PartyContactMech contactMechPurposeId="PhoneShippingDest" fromDate="1265184000000"/>
+        </mantle.party.contact.ContactMech>
+
+        <paymentMethods paymentMethodId="STC_BA" paymentMethodTypeEnumId="PmtBankAccount"
+                        ownerPartyId="ORG_STC" fromDate="1265184000000" description="国内业务收支主账户"
+                        postalContactMechId="ORG_STC_PA" telecomContactMechId="ORG_STC_RTL_PT"
+                        companyNameOnAccount="北京盛安德贸易有限公司">
+            <bankAccount bankName="中国农业银行" typeEnumId="BatChecking" routingNumber="123456789" accountNumber="9555666677778889"
+                         lastCheckNumber="1000" posPayFormatEnumId="PmftZionsBankCsv"
+                         nachaImmedDest="123456789" nachaImmedOrig="000054321" nachaCompanyId="54321" nachaEntryDescription="Operations"/>
+        </paymentMethods>
+
+    </mantle.party.Party>
+
+    <mantle.ledger.LedgerServices.initPartyAccountingConfiguration sourcePartyId="DefaultSettings" organizationPartyId="ORG_STC" baseCurrencyUomId="CNY"/>
+
+    <mantle.facility.Facility facilityId="WH_STC" facilityTypeEnumId="FcTpWarehouse" assetAllowIssueOverQoh="Y" ownerPartyId="ORG_STC" facilityName="盛安德1号仓库"/>
+
+    <mantle.product.store.ProductStore productStoreId="STORE_STC" storeName="盛安德默认店铺"
+                                       organizationPartyId="ORG_STC" inventoryFacilityId="WH_STC" reservationOrderEnumId="AsResOrdFifoRec"
+                                       defaultLocale="zh_CN" defaultCurrencyUomId="CNY" taxGatewayConfigId="LOCAL" requireInventory="N">
+    </mantle.product.store.ProductStore>
+
+    <!-- ========== DEMO CLIENT DATA ========== -->
+    <mantle.party.Party partyId="ORG_WZBW" partyTypeEnumId="PtyOrganization"/>
+    <mantle.party.Organization partyId="ORG_WZBW" organizationName="温州宝沃贸易有限公司"/>
+    <mantle.party.PartyRole partyId="ORG_WZBW" roleTypeId="Customer"/>
+    <mantle.party.PartyRole partyId="ORG_WZBW" roleTypeId="CustomerBillTo"/>
+
+    <mantle.party.Party partyId="ORG_HZPS" partyTypeEnumId="PtyOrganization"/>
+    <mantle.party.Organization partyId="ORG_HZPS" organizationName="杭州平盛贸易有限公司"/>
+    <mantle.party.PartyRole partyId="ORG_HZPS" roleTypeId="Customer"/>
+    <mantle.party.PartyRole partyId="ORG_HZPS" roleTypeId="CustomerBillTo"/>
+
+    <mantle.party.Party partyId="ORG_JSFS" partyTypeEnumId="PtyOrganization"/>
+    <mantle.party.Organization partyId="ORG_JSFS" organizationName="江苏福盛贸易有限公司"/>
+    <mantle.party.PartyRole partyId="ORG_JSFS" roleTypeId="Customer"/>
+    <mantle.party.PartyRole partyId="ORG_JSFS" roleTypeId="CustomerBillTo"/>
+
+    <!-- ========== DEMO SUPPLIER DATA ========== -->
+    <mantle.party.Party partyId="ORG_SHMT" partyTypeEnumId="PtyOrganization"/>
+    <mantle.party.Organization partyId="ORG_SHMT" organizationName="玛特实业(上海)有限公司"/>
+    <mantle.party.PartyRole partyId="ORG_SHMT" roleTypeId="Supplier"/>
+
+    <mantle.product.Product productId="A00000" productName="A型商品" productTypeEnumId="PtAsset" assetTypeEnumId="AstTpInventory" assetClassEnumId="AsClsInventoryFin" chargeShipping="Y" returnable="Y" description="">
+        <prices productPriceId="A00000-p-1" pricePurposeEnumId="PppPurchase" priceTypeEnumId="PptList" fromDate="0" minQuantity="1" price="100.00" priceUomId="CNY" vendorPartyId="ORG_SHMT"/>
+        <prices productPriceId="A00000-p-1" pricePurposeEnumId="PppPurchase" priceTypeEnumId="PptList" fromDate="0" minQuantity="1" price="150.00" priceUomId="CNY"/>
+
+        <mantle.product.asset.Asset assetId="AST-A00000" assetTypeEnumId="AstTpInventory" classEnumId="AsClsInventoryFin"
+                                    statusId="AstAvailable" facilityId="WH_STC" locationSeqId="01010101" ownerPartyId="ORG_STC"
+                                    hasQuantity="Y" quantityOnHandTotal="10" availableToPromiseTotal="10"
+                                    acquireCost="100.00" acquireCostUomId="CNY" receivedDate="1265184000000">
+            <mantle.product.asset.AssetDetail assetDetailId="AST-A00000" effectiveDate="1265184000000"
+                                              quantityOnHandDiff="2000" availableToPromiseDiff="2000"/>
+        </mantle.product.asset.Asset>
+    </mantle.product.Product>
+
+</entity-facade-xml>
