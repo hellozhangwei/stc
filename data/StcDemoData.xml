@@ -30,10 +30,19 @@
         </mantle.party.contact.ContactMech>
 
         <paymentMethods paymentMethodId="STC_BA" paymentMethodTypeEnumId="PmtBankAccount"
-                        ownerPartyId="ORG_STC" fromDate="1265184000000" description="国内业务收支主账户"
+                        ownerPartyId="ORG_STC" fromDate="1265184000000" description="国内业务农行账户"
                         postalContactMechId="ORG_STC_PA" telecomContactMechId="ORG_STC_RTL_PT"
                         companyNameOnAccount="北京盛安德贸易有限公司">
             <bankAccount bankName="中国农业银行" typeEnumId="BatChecking" routingNumber="123456789" accountNumber="9555666677778889"
+                         lastCheckNumber="1000" posPayFormatEnumId="PmftZionsBankCsv"
+                         nachaImmedDest="123456789" nachaImmedOrig="000054321" nachaCompanyId="54321" nachaEntryDescription="Operations"/>
+        </paymentMethods>
+
+        <paymentMethods paymentMethodId="STC_BA2" paymentMethodTypeEnumId="PmtBankAccount"
+                                         ownerPartyId="ORG_STC" fromDate="1265184000000" description="国外业务渣打账户"
+                                         postalContactMechId="ORG_STC_PA" telecomContactMechId="ORG_STC_RTL_PT"
+                                         companyNameOnAccount="北京盛安德贸易有限公司">
+            <bankAccount bankName="渣打银行" typeEnumId="BatChecking" routingNumber="123456789" accountNumber="55554444333322221"
                          lastCheckNumber="1000" posPayFormatEnumId="PmftZionsBankCsv"
                          nachaImmedDest="123456789" nachaImmedOrig="000054321" nachaCompanyId="54321" nachaEntryDescription="Operations"/>
         </paymentMethods>
